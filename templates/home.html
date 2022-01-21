@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+{% block body %}
+<div class="container">
+ <div class="row my-3">
+  <div class="col-sm-6 offset-sm-3">
+   <h3>Walbury Technolabs Dashboard</h3>
+   {% comment %} <button type="button" class="btn btn-primary">Add a meeting</button> {% endcomment %}
+   <br>
+   <br>
+  <p> Full Stack Developer - Intern
+<pre>
+  Wallbury is hiring penultimate students, 
+  who wish to learn more about web and app development and corporate culture, 
+  and actually practice what they learn by working on diverse set of projects.
+
+<bold>Requirement for the internship:</bold>
+
+Proficiency with HTML, CSS, Javascript, ES6, ReactJS, React Native, NodeJS;
+Experience with React Libraries such as Redux;
+Experience in version control (Gitlab/GIT);
+Knowledge and experience with using Restful API;
+Must be able to translate specifications (wireframes) into high-quality code;
+
+  SKILLS REQUIRED : HTML/CSS, JS, JSON/XML
+</pre>
+</p>
+{% if request.user.is_authenticated %} 
+   <a class="btn btn-primary" href="/addbook" role="button">Add a Book</a>
+   {% endif %}
+   <br>
+   <br>
+
+   <a class="btn btn-primary" href="/listbook" role="button">Lists of Books</a>
+   <br>
+   <br>
+   {% if request.user.is_authenticated %}
+   <a class="btn btn-primary" href="/listbook" role="button">Edit a Book</a>
+   <br>
+   {% endif %}
+   <br>
+   {% if request.user.is_authenticated %}
+   <a class="btn btn-primary" href="/listbook" role="button">Delete a Book</a>
+  
+  {% endif %}
+</div>
+ </div>
+</div>
+{% endblock body %}
